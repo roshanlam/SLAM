@@ -14,3 +14,9 @@ It is Simultaneous localization and mapping, a method used to help robots map ar
 `PySDL2`
 
 `scikit-image`
+
+## ToDo
+
+- [ ] Let user upload video using GUI
+- [ ] Improve the SLAM program
+- [ ] Reduce the python code
