@@ -20,3 +20,4 @@ It is Simultaneous localization and mapping, a method used to help robots map ar
 - [ ] Let user upload video using GUI
 - [ ] Improve the SLAM program
 - [ ] Reduce the python code
+- [ ] Save data in `data.json` file
