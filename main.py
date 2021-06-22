@@ -2,9 +2,6 @@ import cv2
 import numpy as np
 from display import Display
 from extractor import Extractor
-import json
-
-from lib import to_json
 
 W, H = 1920 // 2, 1080 // 2
 SIZE = (W, H)
