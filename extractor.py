@@ -6,7 +6,7 @@ from skimage.transform import EssentialMatrixTransform
 np.set_printoptions(suppress=True)
 
 def add_ones(x):
-    """Turn [[x, y]] into [[x, y, 1]"""
+    # Turn [[x, y]] into [[x, y, 1]
     return np.concatenate([x, np.ones((x.shape[0], 1))], axis=1)
 
 def extract_rt(E):

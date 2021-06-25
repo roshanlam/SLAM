@@ -21,3 +21,5 @@ It is Simultaneous localization and mapping, a method used to help robots map ar
 - [ ] Improve the SLAM program
 - [ ] Reduce the python code
 - [ ] Save data in `data.json` file
+- [ ] Update & Append data in `data.json` file
+
