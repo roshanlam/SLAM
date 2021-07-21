@@ -43,9 +43,6 @@ class SaveInfo:
         with open(self.InfoFileName, 'w') as file:
             json.dump(info_status_dic, file)
 
-    def resetTestStatus(self):
-        pass
-
     def start(self):
         self.startSavingInfo()
         self.stopSavingInfo(Status.success)
