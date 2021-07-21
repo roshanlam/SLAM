@@ -5,6 +5,8 @@ from display import Display
 from extractor import Extractor
 import json
 from datetime import datetime
+from lib import SaveInfo, Status
+
 
 W, H = 1920 // 2, 1080 // 2
 SIZE: Tuple[int, int] = (W, H)
@@ -30,21 +32,26 @@ def process_frame(img):
         'date': current_date,
         'matches': info,
     }]
-    with open('data.json', 'w') as file:
-        json.dump(output_list, file, indent=4)
     for pt1, pt2 in matches:
         u1, v1 = ex.denormalise(pt1)
         u2, v2 = ex.denormalise(pt2)
         cv2.circle(img, (u1, v1), color=(0, 255, 0), radius=3)
         cv2.line(img, (u1, v1), (u2, v2), (255, 0, 0))
     display.paint(img)
+    return info
+
+i = 0
 
 if __name__ == "__main__":
     cap = cv2.VideoCapture("countryroad.mp4")
     while cap.isOpened():
+        i += 1
         display.poll()
         ret, frame = cap.read()
         if ret:
-            process_frame(frame)
+            info = process_frame(frame)
+            si = SaveInfo('SavingData{}'.format(i), info)
+            si.start()
+            #i += 1
         else:
             break
